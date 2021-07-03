@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar color="background_header" flat>
+    <v-toolbar color="backgroundHeader" flat>
       <v-btn plain text to="/">
         <span class="material-icons mr-3">holiday_village</span>
         <v-toolbar-title>
@@ -13,7 +13,7 @@
         <span v-else class="material-icons">light_mode</span>
       </v-btn>
     </v-toolbar>
-    <v-toolbar color="background_menu" dense flat>
+    <v-toolbar color="backgroundMenu" dense flat>
       <v-spacer />
       <v-btn-toggle v-model="menu_selected" tile group>
         <v-btn
