@@ -13,23 +13,23 @@
             </v-col>
             <v-col cols="8">
               <v-card-title>
-                <span :style="{ color: getModeParams.blogcardTitle }">
+                <span :style="{ color: getModeParams.blogCardTitle }">
                   {{ item.title }}
                 </span>
               </v-card-title>
               <v-card-subtitle>
-                <span :style="{ color: getModeParams.blogcardSubtitle }">
+                <span :style="{ color: getModeParams.blogCardSubtitle }">
                   {{ item.datetime }}
                 </span>
                 <span
-                  :style="{ color: getModeParams.blogcardSubtitle }"
+                  :style="{ color: getModeParams.blogCardSubtitle }"
                   class="ml-3"
                 >
                   {{ item.category }}
                 </span>
               </v-card-subtitle>
               <v-card-text class="ml-3 pr-10 caption">
-                <span :style="{ color: getModeParams.blogcardText }">
+                <span :style="{ color: getModeParams.blogCardText }">
                   {{ item.text }}
                 </span>
               </v-card-text>
@@ -42,11 +42,14 @@
       v-model="page"
       :length="15"
       :total-visible="7"
-      color="pagenation"
+      color="blogPagenation"
+      next-icon="navigate_next"
+      prev-icon="navigate_before"
     ></v-pagination>
   </div>
 </template>
 <script>
+import cloneDeep from 'lodash/cloneDeep'
 import Mixin from '../plugins/mixin'
 
 export default {
@@ -65,8 +68,9 @@ export default {
     }
   },
   created() {
+    this.items = []
     for (let i = 0; i < 3; i++) {
-      const item = this.ITEM_SAMPLE
+      const item = cloneDeep(this.ITEM_SAMPLE)
       item.blogId = i
       this.items.push(item)
     }

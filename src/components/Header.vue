@@ -2,15 +2,15 @@
   <div>
     <v-toolbar color="backgroundHeader" flat>
       <v-btn plain text to="/">
-        <span class="material-icons mr-3">holiday_village</span>
+        <v-icon class="mr-3">holiday_village</v-icon>
         <v-toolbar-title>
           <span class="button_text">Little Village</span>
         </v-toolbar-title>
       </v-btn>
       <v-spacer />
       <v-btn icon @click="setMordInversion()">
-        <span v-if="isDark" class="material-icons">dark_mode</span>
-        <span v-else class="material-icons">light_mode</span>
+        <v-icon v-if="isDark">dark_mode</v-icon>
+        <v-icon v-else>light_mode</v-icon>
       </v-btn>
     </v-toolbar>
     <v-toolbar color="backgroundMenu" dense flat>
@@ -37,9 +37,9 @@ export default {
     return {
       menu_selected: 0,
       menu_buttons: [
-        { value: 'brog', to: '/', disp: 'Brog' },
-        { value: 'about', to: '/about', disp: 'About' },
-        { value: 'contact', to: '/contact', disp: 'Contact' },
+        { id: 0, value: 'brog', to: '/', disp: 'Brog' },
+        { id: 1, value: 'about', to: '/about', disp: 'About' },
+        { id: 2, value: 'contact', to: '/contact', disp: 'Contact' },
       ],
     }
   },
