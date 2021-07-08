@@ -2,3 +2,22 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+// 背景色（ライトモード）
+$material-light: (
+  'background': #EEE
+);
+
+// 背景色（ダークモード）
+$material-dark: (
+  'background': #111
+);
+
+//------------------
+// date-piccker関連
+//------------------
+
+$date-picker-header-button-font-weight: normal;
+$date-picker-title-date-font-size: 20px;
+$date-picker-table-height: 190px;
+$date-picker-table-date-button-height: 24px;
