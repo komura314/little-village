@@ -1,6 +1,10 @@
 <template>
   <v-card>
-    <v-toolbar flat>Category</v-toolbar>
+    <v-toolbar flat>
+      <v-toolbar-subtitle>
+        <span class="title_text">Category</span>
+      </v-toolbar-subtitle>
+    </v-toolbar>
     <v-list dense>
       <v-list-item-group v-model="selectedItem" color="blogCategory">
         <v-list-item v-for="(item, i) in items" :key="i">
@@ -27,3 +31,10 @@ export default {
   }),
 }
 </script>
+<style lang="scss" scoped>
+.title_text {
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: bold;
+  text-transform: none;
+}
+</style>
