@@ -1,14 +1,12 @@
 <template>
   <v-app>
+    <v-container>
+      <Header />
+    </v-container>
     <v-main>
       <v-container>
-        <Header />
+        <nuxt />
       </v-container>
-      <v-main>
-        <v-container>
-          <nuxt />
-        </v-container>
-      </v-main>
     </v-main>
   </v-app>
 </template>

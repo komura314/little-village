@@ -8,30 +8,21 @@
               <v-img
                 max-height="175"
                 max-width="245"
-                src="/images/no_image_white.png"
+                :src="item.imagePath !== '' ? item.imagePath : NO_IMAGE_PATH"
               />
             </v-col>
             <v-col cols="8">
-              <v-card-title>
-                <span :style="{ color: getModeParams.blogCardTitle }">
-                  {{ item.title }}
-                </span>
+              <v-card-title class="blogCardTitle--text">
+                {{ item.title }}
               </v-card-title>
-              <v-card-subtitle>
-                <span :style="{ color: getModeParams.blogCardSubtitle }">
-                  {{ item.datetime }}
-                </span>
-                <span
-                  :style="{ color: getModeParams.blogCardSubtitle }"
-                  class="ml-3"
-                >
+              <v-card-subtitle class="blogCardSubtitle--text">
+                {{ item.datetime }}
+                <span class="ml-3">
                   {{ item.category }}
                 </span>
               </v-card-subtitle>
-              <v-card-text class="ml-3 pr-10 caption">
-                <span :style="{ color: getModeParams.blogCardText }">
-                  {{ item.text }}
-                </span>
+              <v-card-text class="blogCardText--text ml-3 pr-10 caption">
+                {{ item.text }}
               </v-card-text>
             </v-col>
           </v-row>
@@ -56,8 +47,9 @@ export default {
   mixins: [Mixin],
   data() {
     return {
+      NO_IMAGE_PATH: '/images/no_image_white.png',
       ITEM_SAMPLE: {
-        thumbnailPath: '',
+        imagePath: '',
         title: '１２３４５６７８９十１２３４５６７８二十１２３４５',
         datetime: 'YYYY/MM/DD HH:mm:ss',
         category: '〈１２３４５６７８９十〉',
@@ -77,10 +69,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.button_text {
-  font-family: 'Roboto Mono', sans-serif;
-  font-weight: bold;
-  text-transform: none;
-}
-</style>
